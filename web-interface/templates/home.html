@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}"
+    />
+    <script src="{{url_for('static', filename='bootstrap/js/jquery-3.6.1.min.js')}}">
+    </script>
+    <script src="{{url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js')}}">
+    </script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:;">
+  </head>
+
+  <body>
+    <div class="container d-grid gap-3">
+    <nav class="navbar navbar-light bg-light border-bottom">
+      <div class="container-fluid">
+        <a href="{{url_for('home')}}" class="navbar-brand">
+	  ALLECS
+      	</a>
+      </div>
+    </nav>
+
+    <div class="row px-3">
+    <form action="{{url_for('home')}}" method="POST">
+      <div class="row d-grip gap-2">
+      {% if alerts %}
+      <div class="row">
+	{% for level, msg in alerts.items() %}
+	  <div class="alert alert-{{ level }}" role="alert">{{ msg }}</div>
+	{% endfor %}
+      </div>
+      {% endif %}
+      <label for="checkbox-container">Choose your base model(s) : </label>
+      <div class="row-cols-lg-auto g-3 align-items-center mx-3 mt-1">
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="GECToR-Roberta" name="models" value="GECToR-Roberta" {{'checked' if 'GECToR-Roberta' in models else ''}}>
+          <label for="GECToR-Roberta" class="form-check-label">GECToR-RoBERTa</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="GECToR-XLNet" name="models" value="GECToR-XLNet" {{'checked' if 'GECToR-XLNet' in models else ''}}>
+          <label for="GECToR-XLNet" class="form-check-label">GECToR-XLNet</label>
+	</div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="T5-Large" name="models" value="T5-Large" {{'checked' if 'T5-Large' in models else ''}}>
+          <label for="T5-Large" class="form-check-label">T5-Large</label>
+	</div>
+      </div>
+      <div class="row">
+       <div class="col-lg-6">
+	 <div class="row">
+           <div class="col-10">
+             <label for="combination_select">Choose your combination method : </label> 
+           </div>
+	   <div class="col-2">
+       <select class="combination_select float-end" name="combination_select" id="combination_select">
+          {% for combination in combinations %}
+            <option {{'selected="selected"' if combination == selected_combination else ''}} value={{combination}}>
+              {{combination}}
+            </option>
+          {% endfor %}
+        </select>
+	   </div>
+	 </div>
+       </div>
+       <div class="col-lg-6">
+        <div class="form-check form-check-inline float-end">
+          <label for="analyze" class="form-check-label">Highlight corrections</label>
+          <input type="checkbox" class="form-check-input" id="analyze" name="analyze" value="analyze" {{'checked' if analyze else ''}}>
+        </div>
+       </div>
+      </div>
+      </div>
+      <div class="row py-2 my-3">
+	  <div class="col-lg-6">
+            <label class="form-label" for="inputText">Input</label>
+            <textarea
+	      id="inputText"
+              name="input"
+	      class="form-control"
+              placeholder="Enter text..."
+              rows="10"
+              cols="80">{{input}}</textarea>
+            <br />
+            <button type="submit" class="btn btn-primary float-end">
+	      Run
+	    </button>
+	  </div>
+        <div class="col-lg-6">
+	        <label class="form-label">Output</label>
+          <div class="output-container border-top py-2">{{ output|safe }}</div>
+          <br />
+        </div>
+    	<script src="{{url_for('static', filename='js/script.js')}}"></script>
+      </div>
+    </form>
+    </div>
+    </div>
+  </body>
+</html>
+

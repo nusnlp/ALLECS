@@ -1,0 +1,7 @@
+errant==2.3.3
+Flask[async]==2.0.3
+httpx==0.23.3
+mod-wsgi==4.9.4
+sacremoses==0.0.53
+scikit-learn==1.2.1
+torch==1.9.0

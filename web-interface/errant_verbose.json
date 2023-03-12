@@ -1,0 +1,86 @@
+{
+    "Default": {
+        "M": "<b>{cor}</b> should be inserted here, considering the context.",
+        "R": "<b>{cor} is more appropriate than <b>{ori}</b> in this context.",
+        "U": "<b>{ori}</b> is unnecessary/incorrect in this context."
+    },
+    "ADJ": {
+        "title": "Adjective"
+    },
+    "ADJ:FORM": {
+        "title": "Adjective Form"
+    },
+    "ADV": {
+        "title": "Adverb"
+    },
+    "CONJ": {
+        "title": "Conjunction"
+    },
+    "CONTR": {
+        "title": "Contraction"
+    },
+    "DET": {
+        "title": "Determiner"
+    },
+    "NOUN": {
+        "title": "Noun"
+    },
+    "NOUN:POSS": {
+        "title": "Possessive Noun"
+    },
+    "OTHER": {
+        "title": ""
+    },
+    "PART": {
+        "title": "Particle"
+    },
+    "PREP": {
+        "title": "Preposition"
+    },
+    "PRON": {
+        "title": "Pronoun"
+    },
+    "PUNCT": {
+        "title": "Punctuation"
+    },
+    "VERB": {
+        "title": "Verb"
+    },
+    "VERB:FORM": {
+        "title": "Verb Form"
+    },
+    "VERB:TENSE": {
+        "title": "Verb Tense"
+    },
+    "MORPH": {
+        "title": "Morphology",
+        "R": "The word form of <b>{cor}</b> is more appropriate than <b>{ori}</b> here."
+    },
+    "NOUN:INFL": {
+        "title": "Noun Inflection",
+        "R": "<b>{ori}</b> is wrong and should be written as <b>{cor}</b>."
+    },
+    "NOUN:NUM": {
+        "title": "Noun Number",
+        "R": "The noun number of <b>{ori}</b> is wrong and should be written as <b>{cor}</b>."
+    },
+    "ORTH": {
+        "title": "Orthography"
+    },
+    "SPELL": {
+        "title": "Spelling",
+        "R": "<b>{ori}</b> is not the correct spelling of <b>{cor}</b>."
+    },
+    "VERB:INFL": {
+        "title": "Verb Inflection",
+        "R": "<b>{ori}</b> is wrong and should be written as <b>{cor}</b>."
+    },
+    "VERB:SVA": {
+        "title": "Subject-Verb Agreement",
+        "R": "The form of <b>{ori}</b> does not follow the subject-verb agreement."
+    },
+    "WO": {
+        "title": "Word Order",
+        "R": "The word order of '<b>{ori}</b>' is wrong."
+    }
+}

@@ -1,0 +1,14 @@
+beam_size = 500
+output.nbest = 300
+horizon.stay_threshold = 0.8
+horizon.method = length
+horizon.radius = 7
+length_normalize = false
+
+score.verbatim0.individual = 2
+score.verbatim0.collective = 2
+score.verbatim0.mask = self exact boundary
+
+score.verbatim1.individual = 3
+score.verbatim1.collective = 3
+score.verbatim1.mask = unknown exact snowball_stem wn_stem wn_synonymy paraphrase artificial self transitive boundary
